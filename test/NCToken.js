@@ -3,6 +3,7 @@ const NCToken = artifacts.require("NCToken");
 contract("NCToken", (accounts) => {
   before(async () => {
     nctoken = await NCToken.deployed();
+    console.log("Token address", nctoken.address);
   });
   it("Owner has 1M tokens", async () => {
     let balance = await nctoken.balanceOf(accounts[0]);
