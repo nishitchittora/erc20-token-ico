@@ -65,8 +65,7 @@ module.exports = {
       provider: () =>
         new HDWalletProvider({
           privateKeys: process.env.SECRET_KEY,
-          providerOrUrl:
-            "https://rinkeby.infura.io/v3/421203cc9ecd42e68a84f8e1e3643a06",
+          providerOrUrl: process.env.INFURA_URL,
           numberOfAddresses: 2,
         }),
       network_id: 2, // Ropsten's id
