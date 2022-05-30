@@ -22,4 +22,9 @@ contract("NCToken", (accounts) => {
 
     assert.equal(web3.utils.fromWei(balance), 1000, "Balance should be 1000");
   });
+
+  it("Check if owner has more token before transfer", async () => {
+    let balance = await nctoken.balanceOf(accounts[1]);
+    expect(parseInt(web3.utils.fromWei(balance, "ether"))).to.be.gt(100);
+  });
 });
