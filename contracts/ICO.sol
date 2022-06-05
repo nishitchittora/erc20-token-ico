@@ -22,10 +22,7 @@ contract ICO {
 
   function buyToken(uint256 _buyToken) public payable{
     require(msg.value == multiply(_buyToken, tokenPrice));
-
-
     tokensSold += _buyToken;
-
     emit Seller(msg.sender, _buyToken);
   }
 
